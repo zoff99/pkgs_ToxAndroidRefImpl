@@ -30,13 +30,11 @@ jobs:
     #        coreutils
 
     - run: pwd ;
-           sudo mkdir -p /root/work ;
-           cd /home/runner/work ; git clone https://github.com/zoff99/ToxAndroidRefImpl ;
-           sudo ln -s /home/runner/work/ToxAndroidRefImpl /root/work ;
+           sudo git clone https://github.com/zoff99/ToxAndroidRefImpl /root/work ;
+           sudo chmod a+rwx /root/ ; sudo chmod a+rwx /root/work ;
            sudo mkdir -p /root/work/deploy ;
            sudo mkdir -p /root/.android/ ;
            sudo touch /root/.android/debug.keystore ;
-           sudo chmod a+rwx /root/ ; sudo chmod a+rwx /root/work ;
            cd /root/work/ ;
            sudo mkdir -p build_dir ; sudo chmod a+rwx /root/work/build_dir ;
            cd /root/work/build_dir/ ; pwd ; ls -al ../ ; sudo bash /root/work/circle_scripts/deps.sh ;
