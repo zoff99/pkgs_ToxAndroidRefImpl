@@ -29,8 +29,9 @@ jobs:
             ssh gzip tar
             coreutils
 
-    - run: cd ~/ ; ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ ./work ;
-           ls -al ~/ ;
+    - run: cd ~/ ; pwd ; ls -al ;
+           ls -al /home/runner/work/pkgs_ToxAndroidRefImpl ;
+           ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ ./work ;
            mkdir -p ~/work/deploy ;
            mkdir -p ~/.android/ ;
            touch ~/.android/debug.keystore ;
