@@ -29,11 +29,12 @@ jobs:
             ssh gzip tar
             coreutils
 
-    - run: ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl ~/work ;
+    - run: cd ~/ ; ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ ./work ;
            ls -al ~/ ;
            mkdir -p ~/work/deploy ;
            mkdir -p ~/.android/ ;
            touch ~/.android/debug.keystore ;
+           cd ~/work/ ;
            mkdir -p build_dir ; cd build_dir ; pwd ; ls -al ; bash ../circle_scripts/deps.sh ;
            cd build_dir ; bash ../circle_scripts/trifa.sh '../'
 
