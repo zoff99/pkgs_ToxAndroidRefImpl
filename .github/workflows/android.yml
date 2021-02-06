@@ -29,15 +29,16 @@ jobs:
     #        ssh gzip tar
     #        coreutils
 
-    - run: cd ~/ ; pwd ; ls -al ~/work/ ;
-           ls -al /home/runner/work/pkgs_ToxAndroidRefImpl ;
-           ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ ./work ;
-           mkdir -p ~/work/deploy ;
-           mkdir -p ~/.android/ ;
-           touch ~/.android/debug.keystore ;
-           cd ~/work/ ;
-           mkdir -p build_dir ; cd build_dir ; pwd ; ls -al ; bash ../circle_scripts/deps.sh ;
-           cd build_dir ; bash ../circle_scripts/trifa.sh '../'
+    - run: pwd ;
+           sudo ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ /root/work ;
+           sudo mkdir -p /root/work/deploy ;
+           sudo mkdir -p /root/.android/ ;
+           sudo touch /root/.android/debug.keystore ;
+           sudo chmod a+rwx /root/ ; sudo chmod a+rwx /root/work ;
+           cd /root/work/ ;
+           sudo mkdir -p build_dir ; sudo chmod a+rwx /root/work/build_dir ;
+           cd /root/work/build_dir/ ; pwd ; ls -al ; sudo bash ../circle_scripts/deps.sh ;
+           cd /root/work/build_dir/ ; sudo bash ../circle_scripts/trifa.sh '../'
 
     #- name: Install NDK
     #  run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=${ANDROID_SDK_ROOT}
