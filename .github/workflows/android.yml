@@ -29,12 +29,17 @@ jobs:
             ssh gzip tar
             coreutils
 
-    - run: mkdir -p ~/work/deploy ;
-           
+    - run: ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl ~/work ;
+           ls -al ~/ ;
+           mkdir -p ~/work/deploy ;
+           mkdir -p ~/.android/ ;
+           touch ~/.android/debug.keystore ;
+           mkdir -p build_dir ; cd build_dir ; pwd ; ls -al ; bash ../circle_scripts/deps.sh ;
+           cd build_dir ; bash ../circle_scripts/trifa.sh '../'
 
     #- name: Install NDK
     #  run: echo "y" | sudo /usr/local/lib/android/sdk/tools/bin/sdkmanager --install "ndk;21.0.6113669" --sdk_root=${ANDROID_SDK_ROOT}
 
-    - name: Build with Gradle
-      run: cd android-refimpl-app ; ./gradlew assembleRelease
+    #- name: Build with Gradle
+    #  run: cd android-refimpl-app ; ./gradlew assembleRelease
 
