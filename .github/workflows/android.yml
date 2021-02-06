@@ -29,7 +29,7 @@ jobs:
     #        ssh gzip tar
     #        coreutils
 
-    - run: cd ~/ ; pwd ; ls -al ;
+    - run: cd ~/ ; pwd ; ls -al ~/work/ ;
            ls -al /home/runner/work/pkgs_ToxAndroidRefImpl ;
            ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ ./work ;
            mkdir -p ~/work/deploy ;
