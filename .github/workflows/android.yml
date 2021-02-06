@@ -31,7 +31,8 @@ jobs:
 
     - run: pwd ;
            sudo mkdir -p /root/work ;
-           sudo ln -s /home/runner/work/pkgs_ToxAndroidRefImpl/pkgs_ToxAndroidRefImpl/ /root/work ;
+           cd /home/runner/work ; git clone https://github.com/zoff99/ToxAndroidRefImpl ;
+           sudo ln -s /home/runner/work/ToxAndroidRefImpl/ /root/work ;
            sudo mkdir -p /root/work/deploy ;
            sudo mkdir -p /root/.android/ ;
            sudo touch /root/.android/debug.keystore ;
