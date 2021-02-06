@@ -15,19 +15,19 @@ jobs:
       with:
         java-version: 1.8
 
-    - name: apt
-      run: sudo apt update &&
-           sudo apt install -y --no-install-recommends
-            clang
-            cmake
-            libconfig-dev
-            libgtest-dev
-            ninja-build
-            pkg-config
-            zip grep file ca-certificates autotools-dev autoconf automake
-            git bc wget rsync cmake make pkg-config libtool
-            ssh gzip tar
-            coreutils
+    #- name: apt
+    #  run: sudo apt update &&
+    #       sudo apt install -y --no-install-recommends
+    #        clang
+    #        cmake
+    #        libconfig-dev
+    #        libgtest-dev
+    #        ninja-build
+    #        pkg-config
+    #        zip grep file ca-certificates autotools-dev autoconf automake
+    #        git bc wget rsync cmake make pkg-config libtool
+    #        ssh gzip tar
+    #        coreutils
 
     - run: cd ~/ ; pwd ; ls -al ;
            ls -al /home/runner/work/pkgs_ToxAndroidRefImpl ;
