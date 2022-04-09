@@ -7,11 +7,11 @@ export _HOME_
 
 basedir="$_HOME_""/../"
 
+cd "$basedir"
+
 f1="jitpack.yml"
 f2="pom.xml"
 f3=$(ls -1tr local_maven_trifa_jni_1.0.*.zip|tail -1|tr -d " ")
-
-cd "$basedir"
 
 if [[ $(git status --porcelain --untracked-files=no) ]]; then
 	echo "ERROR: git repo has changes."
