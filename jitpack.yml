@@ -5,7 +5,7 @@ install:
    - pwd
    - id -a
    - ls -al
-   - unzip local_maven_trifa_jni_1.0.154.zip
+   - unzip local_maven_trifa_jni_1.0.155.zip
    - mv -v root/.m2 ~/
 
 
