@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.zoffcc.applications.trifajni</groupId>
   <artifactId>trifa-jni-lib</artifactId>
-  <version>1.0.168</version>
+  <version>1.0.169</version>
   <packaging>aar</packaging>
   <name>trifa-jni-lib</name>
   <description>trifa-jni-lib</description>
