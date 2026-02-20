@@ -39,6 +39,24 @@ echo $next_m_version
 sed -i -e 's#unzip local_maven_trifa_jni_.*$#unzip local_maven_trifa_jni_'"$next_m_version"'.zip#' "$f1"
 sed -i -e 's#.version..*./version.#<version>'"$next_m_version"'</version>#' "$f2"
 
+
+# generate checksum file and add and commit it
+# com.github.zoff99:pkgs_ToxAndroidRefImpl:1.0.172:pkgs_ToxAndroidRefImpl-1.0.172.aar
+
+cd "$basedir"/
+checksum_file="pkgs_ToxAndroidRefImpl-""$next_m_version"".aar.sha256"
+tmp_dir="unpack_temp_$$"
+rm -Rf "$tmp_dir"/
+mkdir -p "$tmp_dir"/
+cd "$tmp_dir"/ && unzip ../local_maven_trifa_jni_"$next_m_version".zip
+cd ./root/.m2/repository/com/zoffcc/applications/trifajni/trifa-jni-lib/"$next_m_version"/
+sha256sum trifa-jni-lib-"$next_m_version".aar
+sha256sum trifa-jni-lib-"$next_m_version".aar > "$basedir"/"$checksum_file"
+cd "$basedir"/
+rm -Rf "$tmp_dir"/
+
+git add "$basedir"/"$checksum_file"
+
 commit_message="$next_m_version"
 tag_name="$next_m_version"
 
