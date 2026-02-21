@@ -41,8 +41,6 @@ sed -i -e 's#.version..*./version.#<version>'"$next_m_version"'</version>#' "$f2
 
 
 # generate checksum file and add and commit it
-# com.github.zoff99:pkgs_ToxAndroidRefImpl:1.0.172:pkgs_ToxAndroidRefImpl-1.0.172.aar
-
 cd "$basedir"/
 checksum_file="pkgs_ToxAndroidRefImpl-""$next_m_version"".aar.sha256"
 tmp_dir="unpack_temp_$$"
