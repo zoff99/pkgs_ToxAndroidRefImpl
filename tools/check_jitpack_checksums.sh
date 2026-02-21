@@ -13,7 +13,7 @@ zip_pkg_name='local_maven_trifa_jni_'
 
 
 f3=$(ls -1tr "$zip_pkg_name"*.zip|tail -1|tr -d " ")
-VERSION=$(echo "$f3" | sed -e 's#^.*local_maven_trifa_jni_##'|sed -e 's#.zip$##')
+VERSION=$(echo "$f3" | sed -e 's#^.*'"$zip_pkg_name"'##'|sed -e 's#.zip$##')
 hash_file="$pkg""-""$VERSION"".aar.sha256"
 LOCAL_HASH=$(cat "$hash_file" | cut -f1 -d' ')
 echo "Local Hash:    $LOCAL_HASH"
